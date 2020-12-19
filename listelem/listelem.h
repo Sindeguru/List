@@ -8,7 +8,7 @@ class TListElem
 protected:
   T data;
   TListElem* next;
-  TListElem* prec;
+  TListElem* prev;
 
 public:
   TListElem(T _data);
@@ -46,14 +46,14 @@ inline TListElem<T>::TListElem(T _data)
 {
   data = _data;
   next = 0;
-  this->prev = 0;
+  SetPrev(0);
 }
 
 template<class T>
 inline TListElem<T>::~TListElem()
 {
   next = 0;
-  this->prev = 0;
+  SetPrev(0);
 }
 
 template<class T>
